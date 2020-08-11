@@ -28,7 +28,7 @@
             :name="index"
           >
             <span v-for="(item, index) in value" :key="index">
-              <div @click="changeMachineSearch(key,item, $event)" :class="sonItem">{{item[0]}}</div>---------------------------
+              <div @click="changeMachineSearch(key,item, $event)" :class="sonItem">{{item[0]}}</div>-------------------------
             </span>
           </el-collapse-item>
         </el-collapse>
@@ -65,7 +65,7 @@
         <!-- 人员管理 -->
         <my-people v-show="index === 11"></my-people>
         <!-- 详情 -->
-        <my-detail v-if="!tableShow&&index<10" :searchId="searchId"></my-detail>
+        <my-detail v-if="!tableShow&&index<11" :searchId="searchId"></my-detail>
       </el-main>
     </el-container>
   </el-container>
@@ -124,7 +124,9 @@ export default {
       sonItem: "sonItem",
       // 判定machineList是否是初始状态
       isMachineStart: 0,
-      machineid:0
+      machineid: 0,
+      machineKey: '',
+      machineInfo: ''
     };
   },
   components: {
@@ -180,6 +182,8 @@ export default {
       this.holderVal = "请输入破碎机及高压辊的处理能力"
       let machineParams = document.querySelectorAll('.sonItem');
       machineParams[0].className = 'sonItem active'
+      }else{
+        this.holderVal = `请输入${this.machineKey}的${this.machineInfo[0]}`;
       }
     }
   },
@@ -230,8 +234,12 @@ export default {
       this.issearch = 1;
     },
     changeMachineSearch(key, info, e) {
+      this.machineKey = key;
+      this.machineInfo = info;
+
       this.isMachineStart = 1;
       this.holderVal = `请输入${key}的${info[0]}`;
+      this.input = '';
       let machineParams = document.querySelectorAll('.sonItem');
       for(let i = 0; i < machineParams.length; i++){
         machineParams[i].className = 'sonItem';
@@ -263,6 +271,7 @@ export default {
 .el-main {
   background-color: #e9eef3;
   color: #333;
+  width: 80%;
 }
 
 body > .el-container {

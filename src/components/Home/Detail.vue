@@ -342,6 +342,7 @@ export default {
   padding: 0.066667rem 0.133333rem 0.133333rem 0.133333rem;
   background: white;
   border-bottom: none!important;
+  border-top: none!important;
 }
 .el-collapse-item__header {
   color: #409eff !important;

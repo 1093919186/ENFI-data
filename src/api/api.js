@@ -156,3 +156,79 @@ export function getGdinfo(options) {
 export function getFminfo(options) {
     return http.post('/ENFI-data/index.php/?s=Machine/fminfo', options)
 }
+
+// 设备搜索api
+// ================================
+
+// 获取破碎机及高压辊搜索信息 
+export function searchPsjgygXhinfo(options) {
+    return http.post('/ENFI-data/index.php/?s=MachineSearch/psjgygxhinfo', options)
+}
+// 获取振动筛搜索信息
+export function searchZdsXhinfo(options) {
+    return http.post('/ENFI-data/index.php/?s=MachineSearch/zdsxhinfo', options)
+}
+// 获取磨机搜索信息
+export function searchMjXhinfo(options) {
+    return http.post('/ENFI-data/index.php/?s=MachineSearch/mjxhinfo', options)
+}
+// 获取浮选机搜索信息
+export function searchFxjXhinfo(options) {
+    return http.post('/ENFI-data/index.php/?s=MachineSearch/fxjxhinfo', options)
+}
+// 获取浮选柱搜索信息
+export function searchFxzXhinfo(options) {
+    return http.post('/ENFI-data/index.php/?s=MachineSearch/fxzxhinfo', options)
+}
+// 获取磁选机搜索信息
+export function searchCxjXhinfo(options) {
+    return http.post('/ENFI-data/index.php/?s=MachineSearch/cxjxhinfo', options)
+}
+// 获取鼓风机搜索信息
+export function searchGfjXhinfo(options) {
+    return http.post('/ENFI-data/index.php/?s=MachineSearch/gfjxhinfo', options)
+}
+// 获取空压机搜索信息
+export function searchKyjXhinfo(options) {
+    return http.post('/ENFI-data/index.php/?s=MachineSearch/kyjxhinfo', options)
+}
+// 获取螺旋输送机搜索信息
+export function searchLxssjXhinfo(options) {
+    return http.post('/ENFI-data/index.php/?s=MachineSearch/lxssjxhinfo', options)
+}
+// 获取泵搜索信息
+export function searchBXhinfo(options) {
+    return http.post('/ENFI-data/index.php/?s=MachineSearch/bxhinfo', options)
+}
+// 获取搅拌槽搜索信息
+export function searchJbcXhinfo(options) {
+    return http.post('/ENFI-data/index.php/?s=MachineSearch/jbcinfo', options)
+}
+// 获取搅拌槽搜索信息
+export function searchQzjinfo(options) {
+    return http.post('/ENFI-data/index.php/?s=MachineSearch/qzjinfo', options)
+}
+// 获取其它设备搜索信息
+export function searchQtinfo(options) {
+    return http.post('/ENFI-data/index.php/?s=MachineSearch/qtinfo', options)
+}
+// 获取金属结构件搜索信息
+export function searchJsjgjinfo(options) {
+    return http.post('/ENFI-data/index.php/?s=MachineSearch/jsjgjinfo', options)
+}
+// 获取阀门搜索信息
+export function searchFminfo(options) {
+    return http.post('/ENFI-data/index.php/?s=MachineSearch/fminfo', options)
+}
+// 获取药剂制备添加搜索信息
+export function searchYjzbtjinfo(options) {
+    return http.post('/ENFI-data/index.php/?s=MachineSearch/yjzbtjinfo', options)
+}
+// 获取药剂种类搜索信息
+export function searchYjzlinfo(options) {
+    return http.post('/ENFI-data/index.php/?s=MachineSearch/yjzlinfo', options)
+}
+// 获取药剂配置浓度搜索信息
+export function searchYjPzndinfo(options) {
+    return http.post('/ENFI-data/index.php/?s=MachineSearch/yjpzndinfo', options)
+}

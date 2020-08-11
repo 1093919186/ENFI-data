@@ -52,6 +52,25 @@ import { getQtinfo } from "@/api/api";
 import { getJsjgjinfo } from "@/api/api";
 import { getGdinfo } from "@/api/api";
 import { getFminfo } from "@/api/api";
+// 设备搜索api
+import { searchPsjgygXhinfo } from "@/api/api";
+import { searchZdsXhinfo } from "@/api/api";
+import { searchMjXhinfo } from "@/api/api";
+import { searchFxjXhinfo } from "@/api/api";
+import { searchFxzXhinfo } from "@/api/api";
+import { searchCxjXhinfo } from "@/api/api";
+import { searchGfjXhinfo } from "@/api/api";
+import { searchKyjXhinfo } from "@/api/api";
+import { searchLxssjXhinfo } from "@/api/api";
+import { searchBXhinfo } from "@/api/api";
+import { searchJbcXhinfo } from "@/api/api";
+import { searchQzjinfo } from "@/api/api";
+import { searchQtinfo } from "@/api/api";
+import { searchJsjgjinfo } from "@/api/api";
+import { searchFminfo } from "@/api/api";
+import { searchYjzbtjinfo } from "@/api/api";
+import { searchYjzlinfo } from "@/api/api";
+import { searchYjPzndinfo } from "@/api/api";
 export default {
   data() {
     return {
@@ -166,6 +185,482 @@ export default {
             getDyInfo().then((res) => {
               this.tableData = this.numSearch(this.input, res, "shijidy");
             });
+          } else if (this.index === 10) {
+            let machineid = this.machineid;
+            if (machineid === 0) {
+              this.numSearchMachine(
+                ["设备名称", "处理能力", "型号", "给矿粒度"],
+                ["equipmentname", "processnum", "xh", "dmax"],
+                getPsjgyginfo,
+                "processnum"
+              );
+            } else if (machineid === 1) {
+              this.dataSearch(
+                ["设备名称", "处理能力", "型号", "给矿粒度"],
+                ["equipmentname", "processnum", "xh", "dmax"],
+                searchPsjgygXhinfo,
+                "xh"
+              );
+            } else if (machineid === 2) {
+              this.numSearchMachine(
+                ["设备名称", "处理能力", "型号", "给矿粒度"],
+                ["equipmentname", "processnum", "xh", "dmax"],
+                getPsjgyginfo,
+                "dmax"
+              );
+            } else if (machineid === 3) {
+              this.numSearchMachine(
+                ["设备名称", "处理能力", "型号"],
+                ["equipmentname", "processnum", "xh"],
+                getZdsinfo,
+                "processnum"
+              );
+            } else if (machineid === 4) {
+              this.dataSearch(
+                ["设备名称", "处理能力", "型号"],
+                ["equipmentname", "processnum", "xh"],
+                searchZdsXhinfo,
+                "xh"
+              );
+            } else if (machineid === 5) {
+              this.numSearchMachine(
+                ["设备名称", "处理能力", "型号", "磨矿细度", "有效容积"],
+                ["equipmentname", "newgkl", "xh", "mkxd", "yxrj"],
+                getMjinfo,
+                "newgkl"
+              );
+            } else if (machineid === 6) {
+              this.dataSearch(
+                ["设备名称", "处理能力", "型号", "磨矿细度", "有效容积"],
+                ["equipmentname", "newgkl", "xh", "mkxd", "yxrj"],
+                searchMjXhinfo,
+                "xh"
+              );
+            } else if (machineid === 7) {
+              this.numSearchMachine(
+                ["设备名称", "处理能力", "型号", "磨矿细度", "有效容积"],
+                ["equipmentname", "newgkl", "xh", "mkxd", "yxrj"],
+                getMjinfo,
+                "mkxd"
+              );
+            } else if (machineid === 8) {
+              this.numSearchMachine(
+                ["设备名称", "处理能力", "型号", "磨矿细度", "有效容积"],
+                ["equipmentname", "newgkl", "xh", "mkxd", "yxrj"],
+                getMjinfo,
+                "yxrj"
+              );
+            } else if (machineid === 9) {
+              this.numSearchMachine(
+                ["设备名称", "处理量", "给矿矿浆量", "直径", "分级细度"],
+                ["equipmentname", "processnum", "gkkjl", "diameter", "fjxd"],
+                getXlqinfo,
+                "processnum"
+              );
+            } else if (machineid === 10) {
+              this.numSearchMachine(
+                ["设备名称", "处理量", "给矿矿浆量", "直径", "分级细度"],
+                ["equipmentname", "processnum", "gkkjl", "diameter", "fjxd"],
+                getXlqinfo,
+                "gkkjl"
+              );
+            } else if (machineid === 11) {
+              this.numSearchMachine(
+                ["设备名称", "处理量", "给矿矿浆量", "直径", "分级细度"],
+                ["equipmentname", "processnum", "gkkjl", "diameter", "fjxd"],
+                getXlqinfo,
+                "diameter"
+              );
+            } else if (machineid === 12) {
+              this.numSearchMachine(
+                ["设备名称", "处理量", "给矿矿浆量", "直径", "分级细度"],
+                ["equipmentname", "processnum", "gkkjl", "diameter", "fjxd"],
+                getXlqinfo,
+                "fjxd"
+              );
+            } else if (machineid === 13) {
+              this.numSearchMachine(
+                ["设备名称", "处理量", "矿浆量", "实际浮选时间", "规格型号"],
+                ["equipmentname", "processnum", "kjl", "shijifxsj", "xh"],
+                getFxjinfo,
+                "processnum"
+              );
+            } else if (machineid === 14) {
+              this.numSearchMachine(
+                ["设备名称", "处理量", "矿浆量", "实际浮选时间", "规格型号"],
+                ["equipmentname", "processnum", "kjl", "shijifxsj", "xh"],
+                getFxjinfo,
+                "kjl"
+              );
+            } else if (machineid === 15) {
+              this.numSearchMachine(
+                ["设备名称", "处理量", "矿浆量", "实际浮选时间", "规格型号"],
+                ["equipmentname", "processnum", "kjl", "shijifxsj", "xh"],
+                getFxjinfo,
+                "shijifxsj"
+              );
+            } else if (machineid === 16) {
+              this.dataSearch(
+                ["设备名称", "处理量", "矿浆量", "实际浮选时间", "规格型号"],
+                ["equipmentname", "processnum", "kjl", "shijifxsj", "xh"],
+                searchFxjXhinfo,
+                "xh"
+              );
+            } else if (machineid === 17) {
+              this.numSearchMachine(
+                ["设备名称", "处理量", "细度", "实际浮选时间", "规格型号"],
+                ["equipmentname", "processnum", "fineness", "shijifxsj", "xh"],
+                getFxzinfo,
+                "processnum"
+              );
+            } else if (machineid === 18) {
+              this.numSearchMachine(
+                ["设备名称", "处理量", "细度", "实际浮选时间", "规格型号"],
+                ["equipmentname", "processnum", "fineness", "shijifxsj", "xh"],
+                getFxzinfo,
+                "fineness"
+              );
+            } else if (machineid === 19) {
+              this.numSearchMachine(
+                ["设备名称", "处理量", "细度", "实际浮选时间", "规格型号"],
+                ["equipmentname", "processnum", "fineness", "shijifxsj", "xh"],
+                getFxzinfo,
+                "shijifxsj"
+              );
+            } else if (machineid === 20) {
+              this.dataSearch(
+                ["设备名称", "处理量", "细度", "实际浮选时间", "规格型号"],
+                ["equipmentname", "processnum", "fineness", "shijifxsj", "xh"],
+                searchFxzXhinfo,
+                "xh"
+              );
+            } else if (machineid === 21) {
+              this.numSearchMachine(
+                ["设备名称", "处理量", "细度", "磁场强度", "规格型号"],
+                ["equipmentname", "processnum", "fineness", "ccqd", "xh"],
+                getCxjinfo,
+                "processnum"
+              );
+            } else if (machineid === 22) {
+              this.numSearchMachine(
+                ["设备名称", "处理量", "细度", "磁场强度", "规格型号"],
+                ["equipmentname", "processnum", "fineness", "ccqd", "xh"],
+                getCxjinfo,
+                "fineness"
+              );
+            } else if (machineid === 23) {
+              this.numSearchMachine(
+                ["设备名称", "处理量", "细度", "磁场强度", "规格型号"],
+                ["equipmentname", "processnum", "fineness", "ccqd", "xh"],
+                getCxjinfo,
+                "ccqd"
+              );
+            } else if (machineid === 24) {
+              this.dataSearch(
+                ["设备名称", "处理量", "细度", "磁场强度", "规格型号"],
+                ["equipmentname", "processnum", "fineness", "ccqd", "xh"],
+                searchCxjXhinfo,
+                "xh"
+              );
+            } else if (machineid === 25) {
+              this.numSearchMachine(
+                ["设备名称", "处理量", "入料细度", "底流浓度", "直径"],
+                ["equipmentname", "processnum", "rlxd", "dlnd", "diameter"],
+                getNsjinfo,
+                "processnum"
+              );
+            } else if (machineid === 26) {
+              this.numSearchMachine(
+                ["设备名称", "处理量", "入料细度", "底流浓度", "直径"],
+                ["equipmentname", "processnum", "rlxd", "dlnd", "diameter"],
+                getNsjinfo,
+                "rlxd"
+              );
+            } else if (machineid === 27) {
+              this.numSearchMachine(
+                ["设备名称", "处理量", "入料细度", "底流浓度", "直径"],
+                ["equipmentname", "processnum", "rlxd", "dlnd", "diameter"],
+                getNsjinfo,
+                "dlnd"
+              );
+            } else if (machineid === 28) {
+              this.numSearchMachine(
+                ["设备名称", "处理量", "入料细度", "底流浓度", "直径"],
+                ["equipmentname", "processnum", "rlxd", "dlnd", "diameter"],
+                getNsjinfo,
+                "diameter"
+              );
+            } else if (machineid === 29) {
+              this.numSearchMachine(
+                ["设备名称", "处理量", "细度", "滤饼水分", "过滤面积"],
+                ["equipmentname", "processnum", "xd", "lbsf", "glmj"],
+                getGljinfo,
+                "processnum"
+              );
+            } else if (machineid === 30) {
+              this.numSearchMachine(
+                ["设备名称", "处理量", "细度", "滤饼水分", "过滤面积"],
+                ["equipmentname", "processnum", "xd", "lbsf", "glmj"],
+                getGljinfo,
+                "xd"
+              );
+            } else if (machineid === 31) {
+              this.numSearchMachine(
+                ["设备名称", "处理量", "细度", "滤饼水分", "过滤面积"],
+                ["equipmentname", "processnum", "xd", "lbsf", "glmj"],
+                getGljinfo,
+                "lbsf"
+              );
+            } else if (machineid === 32) {
+              this.numSearchMachine(
+                ["设备名称", "处理量", "细度", "滤饼水分", "过滤面积"],
+                ["equipmentname", "processnum", "xd", "lbsf", "glmj"],
+                getGljinfo,
+                "glmj"
+              );
+            } else if (machineid === 33) {
+              this.numSearchMachine(
+                ["设备名称", "流量", "出口压力", "规格型号"],
+                ["equipmentname", "ll", "ckyl", "xh"],
+                getGfjinfo,
+                "ll"
+              );
+            } else if (machineid === 34) {
+              this.numSearchMachine(
+                ["设备名称", "流量", "出口压力", "规格型号"],
+                ["equipmentname", "ll", "ckyl", "xh"],
+                getGfjinfo,
+                "ckyl"
+              );
+            } else if (machineid === 35) {
+              this.dataSearch(
+                ["设备名称", "流量", "出口压力", "规格型号"],
+                ["equipmentname", "ll", "ckyl", "xh"],
+                searchGfjXhinfo,
+                "xh"
+              );
+            } else if (machineid === 36) {
+              this.numSearchMachine(
+                ["设备名称", "排气量", "压力", "型号"],
+                ["equipmentname", "pql", "yl", "xh"],
+                getKyjinfo,
+                "pql"
+              );
+            } else if (machineid === 37) {
+              this.numSearchMachine(
+                ["设备名称", "排气量", "压力", "型号"],
+                ["equipmentname", "pql", "yl", "xh"],
+                getKyjinfo,
+                "yl"
+              );
+            } else if (machineid === 38) {
+              this.dataSearch(
+                ["设备名称", "排气量", "压力", "型号"],
+                ["equipmentname", "pql", "yl", "xh"],
+                searchKyjXhinfo,
+                "xh"
+              );
+            } else if (machineid === 39) {
+              this.numSearchMachine(
+                ["设备名称", "处理量"],
+                ["equipmentname", "processnum"],
+                getGljfkjinfo,
+                "processnum"
+              );
+            } else if (machineid === 40) {
+              this.numSearchMachine(
+                ["输送量", "最大粒度", "高度", "长度", "带速"],
+                ["ssongl", "zdld", "high", "length", "ds"],
+                getDsssjinfo,
+                "ssongl"
+              );
+            } else if (machineid === 41) {
+              this.numSearchMachine(
+                ["输送量", "最大粒度", "高度", "长度", "带速"],
+                ["ssongl", "zdld", "high", "length", "ds"],
+                getDsssjinfo,
+                "zdld"
+              );
+            } else if (machineid === 42) {
+              this.numSearchMachine(
+                ["输送量", "最大粒度", "高度", "长度", "带速"],
+                ["ssongl", "zdld", "high", "length", "ds"],
+                getDsssjinfo,
+                "high"
+              );
+            } else if (machineid === 43) {
+              this.numSearchMachine(
+                ["输送量", "最大粒度", "高度", "长度", "带速"],
+                ["ssongl", "zdld", "high", "length", "ds"],
+                getDsssjinfo,
+                "length"
+              );
+            } else if (machineid === 44) {
+              this.numSearchMachine(
+                ["输送量", "最大粒度", "高度", "长度", "带速"],
+                ["ssongl", "zdld", "high", "length", "ds"],
+                getDsssjinfo,
+                "ds"
+              );
+            } else if (machineid === 45) {
+              this.numSearchMachine(
+                ["设备名称", "设计输送量", "螺旋直径", "型号"],
+                ["equipmentname", "sjssl", "lxzj", "xh"],
+                getLxssjinfo,
+                "sjssl"
+              );
+            } else if (machineid === 46) {
+              this.numSearchMachine(
+                ["设备名称", "设计输送量", "螺旋直径", "型号"],
+                ["equipmentname", "sjssl", "lxzj", "xh"],
+                getLxssjinfo,
+                "lxzj"
+              );
+            } else if (machineid === 47) {
+              this.dataSearch(
+                ["设备名称", "设计输送量", "螺旋直径", "型号"],
+                ["equipmentname", "sjssl", "lxzj", "xh"],
+                searchLxssjXhinfo,
+                "xh"
+              );
+            } else if (machineid === 48) {
+              this.numSearchMachine(
+                ["设备名称", "泵处理量", "扬程", "粒度", "规格型号"],
+                ["equipmentname", "bcll", "yc", "ld", "xh"],
+                getBinfo,
+                "bcll"
+              );
+            } else if (machineid === 49) {
+              this.numSearchMachine(
+                ["设备名称", "泵处理量", "扬程", "粒度", "规格型号"],
+                ["equipmentname", "bcll", "yc", "ld", "xh"],
+                getBinfo,
+                "yc"
+              );
+            } else if (machineid === 50) {
+              this.numSearchMachine(
+                ["设备名称", "泵处理量", "扬程", "粒度", "规格型号"],
+                ["equipmentname", "bcll", "yc", "ld", "xh"],
+                getBinfo,
+                "ld"
+              );
+            } else if (machineid === 51) {
+              this.dataSearch(
+                ["设备名称", "泵处理量", "扬程", "粒度", "规格型号"],
+                ["equipmentname", "bcll", "yc", "ld", "xh"],
+                searchBXhinfo,
+                "xh"
+              );
+            } else if (machineid === 52) {
+              this.numSearchMachine(
+                ["设备名称", "矿浆量", "实际搅拌时间", "规格型号"],
+                ["equipmentname", "kjl", "shijijbsj", "xh"],
+                getJbcinfo,
+                "kjl"
+              );
+            } else if (machineid === 53) {
+              this.numSearchMachine(
+                ["设备名称", "矿浆量", "实际搅拌时间", "规格型号"],
+                ["equipmentname", "kjl", "shijijbsj", "xh"],
+                getJbcinfo,
+                "shijijbsj"
+              );
+            } else if (machineid === 54) {
+              this.dataSearch(
+                ["设备名称", "矿浆量", "实际搅拌时间", "规格型号"],
+                ["equipmentname", "kjl", "shijijbsj", "xh"],
+                searchJbcXhinfo,
+                "xh"
+              );
+            } else if (machineid === 55) {
+              this.dataSearch(
+                ["设备名称", "主钩起重量", "抓斗斗容"],
+                ["equipmentname", "zgqzl", "zddr"],
+                searchQzjinfo,
+                "equipmentname"
+              );
+            } else if (machineid === 56) {
+              this.numSearchMachine(
+                ["设备名称", "主钩起重量", "抓斗斗容"],
+                ["equipmentname", "zgqzl", "zddr"],
+                getQzjinfo,
+                "zgqzl"
+              );
+            } else if (machineid === 57) {
+              this.numSearchMachine(
+                ["设备名称", "主钩起重量", "抓斗斗容"],
+                ["equipmentname", "zgqzl", "zddr"],
+                getQzjinfo,
+                "zddr"
+              );
+            } else if (machineid === 58) {
+              this.numSearchMachine(
+                ["设备名称", "起重重量"],
+                ["equipmentname", "qzzl"],
+                getHlinfo,
+                "qzzl"
+              );
+            } else if (machineid === 59) {
+              this.dataSearch(
+                ["药剂名称", "药剂种类", "制备浓度"],
+                ["yjmc", "yjzl", "pznd"],
+                searchYjzbtjinfo,
+                "yjmc"
+              );
+            } else if (machineid === 60) {
+              this.dataSearch(
+                ["药剂名称", "药剂种类", "制备浓度"],
+                ["yjmc", "yjzl", "pznd"],
+                searchYjzlinfo,
+                "yjzl"
+              );
+            } else if (machineid === 61) {
+              if (/\d+/.test(this.input)) {
+                this.numSearchMachine(
+                  ["药剂名称", "药剂种类", "制备浓度"],
+                  ["yjmc", "yjzl", "pznd"],
+                  getYjzbtjinfo,
+                  "pznd"
+                );
+              } else {
+                this.dataSearch(
+                  ["药剂名称", "药剂种类", "制备浓度"],
+                  ["yjmc", "yjzl", "pznd"],
+                  searchYjPzndinfo,
+                  "pznd"
+                );
+              }
+            } else if (machineid === 62) {
+              this.dataSearch(
+                ["设备名称"],
+                ["equipmentname"],
+                searchQtinfo,
+                "equipmentname"
+              );
+            } else if (machineid === 63) {
+              this.dataSearch(
+                ["金属结构件名称"],
+                ["jsjgjmc"],
+                searchJsjgjinfo,
+                "jsjgjmc"
+              );
+            } else if (machineid === 64) {
+              this.numSearchMachine(["管道规格"], ["gdgg"], getGdinfo, "gdgg");
+            } else if (machineid === 65) {
+              this.dataSearch(
+                ["阀门规格", "工作压力"],
+                ["fmgg", "gzyl"],
+                searchFminfo,
+                "fmgg"
+              );
+            } else if (machineid === 66) {
+              this.numSearchMachine(
+                ["阀门规格", "工作压力"],
+                ["fmgg", "gzyl"],
+                getFminfo,
+                "gzyl"
+              );
+            }
           }
         }
         this.$emit("clearSearch");
@@ -192,26 +687,40 @@ export default {
       this.$emit("switch", e.projectid);
     },
     // 搜索像钢耗、处理量、这样的数字信息用这个函数
+    // 负数会取到相反的结果,后续有需求在此处优化
     numSearch(input, res, key) {
-      let reg = /\d+/g;
+      // let reg = /[+-]?(0|([1-9]\d*))(\.\d+)?/g;
+      let reg = /(0|([1-9]\d*))(\.\d+)?/g;
       let ipt = "0";
       let tableData = [];
+      let ids = [];
       if (input.match(reg)) {
         ipt = input.match(reg)[0];
         for (let i = 0; i < res.length; i++) {
           if (res[i][key] === "") continue;
           let arr = res[i][key].match(reg);
-          for (let j = 0; j < arr.length; j++) {
-            if (
-              parseInt(arr[j]) <= parseInt(ipt) * 1.5 &&
-              parseInt(arr[j]) >= parseInt(ipt) * 0.5
-            ) {
-              tableData.push(res[i]);
+          if (arr) {
+            for (let j = 0; j < arr.length; j++) {
+              if (
+                parseFloat(arr[j]) <= parseFloat(ipt) * 1.5 &&
+                parseFloat(arr[j]) >= parseFloat(ipt) * 0.5 &&
+                ids.indexOf(res[i]["id"]) === -1
+              ) {
+                ids.push(res[i]["id"]);
+                tableData.push(res[i]);
+              }
             }
           }
         }
       }
       return tableData;
+    },
+    numSearchMachine(tableHeader, attributes, fn, propName) {
+      this.tableHeader = tableHeader;
+      this.attributes = attributes;
+      fn().then((res) => {
+        this.tableData = this.numSearch(this.input, res, propName);
+      });
     },
     // 页面刚出来的数据请求、刷新
     dataStart(tableHeader, attributes, fn) {
@@ -290,14 +799,14 @@ export default {
         let machineid = this.machineid;
         if (machineid === 0 || machineid === 1 || machineid === 2) {
           this.dataStart(
-            ["设备名称","处理能力", "型号", "给矿粒度"],
-            ["equipmentname","processnum", "xh", "dmax"],
+            ["设备名称", "处理能力", "型号", "给矿粒度"],
+            ["equipmentname", "processnum", "xh", "dmax"],
             getPsjgyginfo
           );
         } else if (machineid === 3 || machineid === 4) {
           this.dataStart(
-            ["设备名称","处理能力", "型号"],
-            ["equipmentname","processnum", "xh"],
+            ["设备名称", "处理能力", "型号"],
+            ["equipmentname", "processnum", "xh"],
             getZdsinfo
           );
         } else if (
@@ -307,8 +816,8 @@ export default {
           machineid === 8
         ) {
           this.dataStart(
-            ["设备名称","处理能力", "型号", "磨矿细度", "有效容积"],
-            ["equipmentname","newgkl", "xh", "mkxd", "yxrj"],
+            ["设备名称", "处理能力", "型号", "磨矿细度", "有效容积"],
+            ["equipmentname", "newgkl", "xh", "mkxd", "yxrj"],
             getMjinfo
           );
         } else if (
@@ -318,8 +827,8 @@ export default {
           machineid === 12
         ) {
           this.dataStart(
-            ["设备名称","处理量", "给矿矿浆量", "直径", "分级细度"],
-            ["equipmentname","processnum", "gkkjl", "diameter", "fjxd"],
+            ["设备名称", "处理量", "给矿矿浆量", "直径", "分级细度"],
+            ["equipmentname", "processnum", "gkkjl", "diameter", "fjxd"],
             getXlqinfo
           );
         } else if (
@@ -329,8 +838,8 @@ export default {
           machineid === 16
         ) {
           this.dataStart(
-            ["设备名称","处理量", "矿浆量", "实际浮选时间", "规格型号"],
-            ["equipmentname","processnum", "kjl", "shijifxsj", "xh"],
+            ["设备名称", "处理量", "矿浆量", "实际浮选时间", "规格型号"],
+            ["equipmentname", "processnum", "kjl", "shijifxsj", "xh"],
             getFxjinfo
           );
         } else if (
@@ -340,8 +849,8 @@ export default {
           machineid === 20
         ) {
           this.dataStart(
-            ["设备名称","处理量", "细度", "实际浮选时间", "规格型号"],
-            ["equipmentname","processnum", "fineness", "shijifxsj", "xh"],
+            ["设备名称", "处理量", "细度", "实际浮选时间", "规格型号"],
+            ["equipmentname", "processnum", "fineness", "shijifxsj", "xh"],
             getFxzinfo
           );
         } else if (
@@ -351,8 +860,8 @@ export default {
           machineid === 24
         ) {
           this.dataStart(
-            ["设备名称","处理量", "细度", "磁场强度", "规格型号"],
-            ["equipmentname","processnum", "fineness", "ccqd", "xh"],
+            ["设备名称", "处理量", "细度", "磁场强度", "规格型号"],
+            ["equipmentname", "processnum", "fineness", "ccqd", "xh"],
             getCxjinfo
           );
         } else if (
@@ -362,8 +871,8 @@ export default {
           machineid === 28
         ) {
           this.dataStart(
-            ["设备名称","处理量", "入料细度", "底流浓度", "直径"],
-            ["equipmentname","processnum", "rlxd", "dlnd", "diameter"],
+            ["设备名称", "处理量", "入料细度", "底流浓度", "直径"],
+            ["equipmentname", "processnum", "rlxd", "dlnd", "diameter"],
             getNsjinfo
           );
         } else if (
@@ -373,24 +882,28 @@ export default {
           machineid === 32
         ) {
           this.dataStart(
-            ["设备名称","处理量", "细度", "滤饼水分", "过滤面积"],
-            ["equipmentname","processnum", "xd", "lbsf", "glmj"],
+            ["设备名称", "处理量", "细度", "滤饼水分", "过滤面积"],
+            ["equipmentname", "processnum", "xd", "lbsf", "glmj"],
             getGljinfo
           );
         } else if (machineid === 33 || machineid === 34 || machineid === 35) {
           this.dataStart(
-            ["设备名称","流量", "出口压力", "规格型号"],
-            ["equipmentname","ll", "ckyl", "xh"],
+            ["设备名称", "流量", "出口压力", "规格型号"],
+            ["equipmentname", "ll", "ckyl", "xh"],
             getGfjinfo
           );
         } else if (machineid === 36 || machineid === 37 || machineid === 38) {
           this.dataStart(
-            ["设备名称","排气量", "压力", "型号"],
-            ["equipmentname","pql", "yl", "xh"],
+            ["设备名称", "排气量", "压力", "型号"],
+            ["equipmentname", "pql", "yl", "xh"],
             getKyjinfo
           );
         } else if (machineid === 39) {
-          this.dataStart(["设备名称","处理量"], ["equipmentname","processnum"], getGljfkjinfo);
+          this.dataStart(
+            ["设备名称", "处理量"],
+            ["equipmentname", "processnum"],
+            getGljfkjinfo
+          );
         } else if (
           machineid === 40 ||
           machineid === 41 ||
@@ -405,8 +918,8 @@ export default {
           );
         } else if (machineid === 45 || machineid === 46 || machineid === 47) {
           this.dataStart(
-            ["设备名称","设计输送量", "螺旋直径", "型号"],
-            ["equipmentname","sjssl", "lxzj", "xh"],
+            ["设备名称", "设计输送量", "螺旋直径", "型号"],
+            ["equipmentname", "sjssl", "lxzj", "xh"],
             getLxssjinfo
           );
         } else if (
@@ -416,14 +929,14 @@ export default {
           machineid === 51
         ) {
           this.dataStart(
-            ["设备名称","泵处理量", "扬程", "粒度", "规格型号"],
-            ["equipmentname","bcll", "yc", "ld", "xh"],
+            ["设备名称", "泵处理量", "扬程", "粒度", "规格型号"],
+            ["equipmentname", "bcll", "yc", "ld", "xh"],
             getBinfo
           );
         } else if (machineid === 52 || machineid === 53 || machineid === 54) {
           this.dataStart(
-            ["设备名称","矿浆量", "实际搅拌时间", "规格型号"],
-            ["equipmentname","kjl", "shijijbsj", "xh"],
+            ["设备名称", "矿浆量", "实际搅拌时间", "规格型号"],
+            ["equipmentname", "kjl", "shijijbsj", "xh"],
             getJbcinfo
           );
         } else if (machineid === 55 || machineid === 56 || machineid === 57) {
@@ -433,37 +946,25 @@ export default {
             getQzjinfo
           );
         } else if (machineid === 58) {
-          this.dataStart(["设备名称","起重重量"], ["equipmentname","qzzl"], getHlinfo);
+          this.dataStart(
+            ["设备名称", "起重重量"],
+            ["equipmentname", "qzzl"],
+            getHlinfo
+          );
         } else if (machineid === 59 || machineid === 60 || machineid === 61) {
           this.dataStart(
             ["药剂名称", "药剂种类", "制备浓度"],
-            ["yjmc","yjzl","pznd"],
+            ["yjmc", "yjzl", "pznd"],
             getYjzbtjinfo
           );
-        }else if (machineid === 62) {
-          this.dataStart(
-            ["设备名称"],
-            ["equipmentname"],
-            getQtinfo
-          );
-        }else if (machineid === 63) {
-          this.dataStart(
-            ["金属结构件名称"],
-            ["jsjgjmc"],
-            getJsjgjinfo
-          );
-        }else if (machineid === 64) {
-          this.dataStart(
-            ["管道规格"],
-            ["gdgg"],
-            getGdinfo
-          );
-        }else if (machineid === 65||machineid===66) {
-          this.dataStart(
-            ["阀门规格","工作压力"],
-            ["fmgg","gzyl"],
-            getFminfo
-          );
+        } else if (machineid === 62) {
+          this.dataStart(["设备名称"], ["equipmentname"], getQtinfo);
+        } else if (machineid === 63) {
+          this.dataStart(["金属结构件名称"], ["jsjgjmc"], getJsjgjinfo);
+        } else if (machineid === 64) {
+          this.dataStart(["管道规格"], ["gdgg"], getGdinfo);
+        } else if (machineid === 65 || machineid === 66) {
+          this.dataStart(["阀门规格", "工作压力"], ["fmgg", "gzyl"], getFminfo);
         }
       }
     },
