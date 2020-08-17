@@ -28,6 +28,12 @@ const routes = [{
             import ( /* webpackChunkName: "success" */ '../components/Public/Success.vue')
     },
     {
+        path: '/add',
+        name: 'Add',
+        component: () =>
+            import ( /* webpackChunkName: "success" */ '../views/Add/Add.vue')
+    },
+    {
         path: '*',
         redirect: '/'
     }

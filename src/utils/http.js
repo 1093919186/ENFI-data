@@ -33,7 +33,11 @@ let http;
                     }
                     if (readyState === 4) {
                         // this.config.success(JSON.parse(xhr.responseText));
-                        this.isGET ? resolved(JSON.parse(xhr.responseText)) : resolved(JSON.parse(xhr.responseText));
+                        try {
+                            resolved(JSON.parse(xhr.responseText))
+                        } catch (err) {
+                            resolved(xhr.responseText);
+                        }
                     }
                 }
                 xhr.send(this.isGET ? null : this.paramsSerialize(null, this.config.params));

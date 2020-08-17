@@ -232,3 +232,172 @@ export function searchYjzlinfo(options) {
 export function searchYjPzndinfo(options) {
     return http.post('/ENFI-data/index.php/?s=MachineSearch/yjpzndinfo', options)
 }
+
+// 表信息
+
+// 项目表
+export function tableProjectinfo(options) {
+    return http.post('/ENFI-data/index.php/?s=Table/tableprojectinfo', options)
+}
+// 子项表
+export function tableChildinfo(options) {
+    return http.post('/ENFI-data/index.php/?s=Table/tablechildinfo', options)
+}
+// 原矿表
+export function tableRawinfo(options) {
+    return http.post('/ENFI-data/index.php/?s=Table/tablerawinfo', options)
+}
+// 精矿表
+export function tableConcentrateoreinfo(options) {
+    return http.post('/ENFI-data/index.php/?s=Table/tableconcentrateoreinfo', options)
+}
+// 项目指标表
+export function tableIcatorsinfo(options) {
+    return http.post('/ENFI-data/index.php/?s=Table/tableicatorsinfoinfo', options)
+}
+// 项目指标元素表
+export function tableIndicatorseleinfo(options) {
+    return http.post('/ENFI-data/index.php/?s=Table/tableindicatorseleinfo', options)
+}
+// 图纸量表
+export function tableDrawinginfo(options) {
+    return http.post('/ENFI-data/index.php/?s=Table/tabledrawinginfo', options)
+}
+// 电能消耗表
+export function tablePowerconsumption(options) {
+    return http.post('/ENFI-data/index.php/?s=Table/tablepowerconsumption', options)
+}
+// 材料消耗表
+export function tableMaterialconsumption(options) {
+    return http.post('/ENFI-data/index.php/?s=Table/tablematerialconsumption', options)
+}
+// 定员表
+export function tablePeople(options) {
+    return http.post('/ENFI-data/index.php/?s=Table/tablepeople', options)
+}
+// 药剂消耗表
+export function tableYjconsumption(options) {
+    return http.post('/ENFI-data/index.php/?s=Table/tableyjconsumption', options)
+}
+// 药剂消耗药剂表
+export function tableYjconsumptionyj(options) {
+    return http.post('/ENFI-data/index.php/?s=Table/tableyjconsumptionyj', options)
+}
+// 药剂消耗药剂表
+export function tableMachineposui(options) {
+    return http.post('/ENFI-data/index.php/?s=Table/tablemachineposui', options)
+}
+// 药剂消耗药剂表
+export function tableMachinesieve(options) {
+    return http.post('/ENFI-data/index.php/?s=Table/tablemachinesieve', options)
+}
+// 药剂消耗药剂表
+export function tableMachinemill(options) {
+    return http.post('/ENFI-data/index.php/?s=Table/tablemachinemill', options)
+}
+// 药剂消耗药剂表
+export function tableMachinecyclone(options) {
+    return http.post('/ENFI-data/index.php/?s=Table/tablemachinecyclone', options)
+}
+// 药剂消耗药剂表
+export function tableMachineflotation(options) {
+    return http.post('/ENFI-data/index.php/?s=Table/tablemachineflotation', options)
+}
+// 药剂消耗药剂表
+export function tableMachineflocolumn(options) {
+    return http.post('/ENFI-data/index.php/?s=Table/tablemachineflocolumn', options)
+}
+// 药剂消耗药剂表
+export function tableMachinecxj(options) {
+    return http.post('/ENFI-data/index.php/?s=Table/tablemachinecxj', options)
+}
+// 药剂消耗药剂表
+export function tableMachinett(options) {
+    return http.post('/ENFI-data/index.php/?s=Table/tablemachinett', options)
+}
+// 药剂消耗药剂表
+export function tableMachineyc(options) {
+    return http.post('/ENFI-data/index.php/?s=Table/tablemachineyc', options)
+}
+// 药剂消耗药剂表
+export function tableMachinelc(options) {
+    return http.post('/ENFI-data/index.php/?s=Table/tablemachinelc', options)
+}
+// 药剂消耗药剂表
+export function tableMachinensj(options) {
+    return http.post('/ENFI-data/index.php/?s=Table/tablemachinensj', options)
+}
+// 药剂消耗药剂表
+export function tableMachineglj(options) {
+    return http.post('/ENFI-data/index.php/?s=Table/tablemachineglj', options)
+}
+// 药剂消耗药剂表
+export function tableMachinegzj(options) {
+    return http.post('/ENFI-data/index.php/?s=Table/tablemachinegzj', options)
+}
+// 药剂消耗药剂表
+export function tableMachinegfj(options) {
+    return http.post('/ENFI-data/index.php/?s=Table/tablemachinegfj', options)
+}
+// 药剂消耗药剂表
+export function tableMachinekyj(options) {
+    return http.post('/ENFI-data/index.php/?s=Table/tablemachinekyj', options)
+}
+// 药剂消耗药剂表
+export function tableMachinegljfkj(options) {
+    return http.post('/ENFI-data/index.php/?s=Table/tablemachinegljfkj', options)
+}
+// 药剂消耗药剂表
+export function tableMachinepd(options) {
+    return http.post('/ENFI-data/index.php/?s=Table/tablemachinepd', options)
+}
+// 药剂消耗药剂表
+export function tableMachinelxysj(options) {
+    return http.post('/ENFI-data/index.php/?s=Table/tablemachinelxysj', options)
+}
+// 药剂消耗药剂表
+export function tableMachineb(options) {
+    return http.post('/ENFI-data/index.php/?s=Table/tablemachineb', options)
+}
+// 药剂消耗药剂表
+export function tableMachinejbckjx(options) {
+    return http.post('/ENFI-data/index.php/?s=Table/tablemachinejbckjx', options)
+}
+// 药剂消耗药剂表
+export function tableMachineqzj(options) {
+    return http.post('/ENFI-data/index.php/?s=Table/tablemachineqzj', options)
+}
+// 药剂消耗药剂表
+export function tableMachinehl(options) {
+    return http.post('/ENFI-data/index.php/?s=Table/tablemachinehl', options)
+}
+// 药剂消耗药剂表
+export function tableMachineyj(options) {
+    return http.post('/ENFI-data/index.php/?s=Table/tablemachineyj', options)
+}
+// 药剂消耗药剂表
+export function tableMachineother(options) {
+    return http.post('/ENFI-data/index.php/?s=Table/tablemachineother', options)
+}
+// 药剂消耗药剂表
+export function tableMachinejsjgj(options) {
+    return http.post('/ENFI-data/index.php/?s=Table/tablemachinejsjgj', options)
+}
+// 药剂消耗药剂表
+export function tableMachinegd(options) {
+    return http.post('/ENFI-data/index.php/?s=Table/tablemachinegd', options)
+}
+// 药剂消耗药剂表
+export function tableMachinefm(options) {
+    return http.post('/ENFI-data/index.php/?s=Table/tablemachinefm', options)
+}
+// 药剂消耗药剂表
+export function tableMachineetc(options) {
+    return http.post('/ENFI-data/index.php/?s=Table/tablemachineetc', options)
+}
+
+
+// 删除信息
+export function Delete(options) {
+    return http.post('/ENFI-data/index.php/?s=Table/delete', options)
+}

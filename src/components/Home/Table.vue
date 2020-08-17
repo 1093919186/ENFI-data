@@ -1,5 +1,5 @@
 <template>
-  <el-table :data="tableData" style="width: 100%" height="600" v-if="tableData.length !== 0">
+  <el-table :data="tableData" style="width: 100%" height="600" lazy v-if="tableData.length !== 0">
     <el-table-column fixed prop="projectid" label="项目编号" width="300"></el-table-column>
     <el-table-column
       v-for="(item,i) in tableHeader"
@@ -7,6 +7,7 @@
       :prop="attributes[i]"
       :label="item"
       width="300"
+      show-overflow-tooltip
     ></el-table-column>
     <el-table-column fixed="right" label="操作" width="100">
       <template slot-scope="scope">

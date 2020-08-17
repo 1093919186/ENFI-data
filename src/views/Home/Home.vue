@@ -43,10 +43,11 @@
         ></el-input>
         <el-button
           @click="search(input)"
-          style="padding: 12px 18px; height:38px;line-height:8px"
+          style="padding: 12px 18px; height:36px;line-height:8px"
           type="success"
         >搜 索</el-button>
         <el-button @click="goout" style="padding: 12px 18px; height:38px;line-height:8px">退出登录</el-button>
+        <el-button v-if="power==='超级管理员'" @click="toAdd" type="primary" style="padding: 12px 18px; height:36px;line-height:8px">数据管理</el-button>
         <!-- 搜索列表 -->
         <my-table
           v-show="index <= 10"
@@ -210,6 +211,9 @@ export default {
     goout() {
       clearCookie();
       this.$router.push({ path: "/success", query: { url: "login" } });
+    },
+    toAdd(){
+      window.open(this.$store.state.baseUrl + '/Add','_blank')
     },
     search() {
       if (this.tableShow === true) {

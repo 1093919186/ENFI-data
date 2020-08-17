@@ -8,7 +8,10 @@ export default new Vuex.Store({
         // 这里放置公用数据
         baseUrl: 'http://localhost:8081/#',
         time: 3,
-        show: 0
+        // 记录页面初始状态
+        show: 0,
+        // 记录删除页面的初始index
+        delIndex: 0
     },
     mutations: {},
     actions: {},
