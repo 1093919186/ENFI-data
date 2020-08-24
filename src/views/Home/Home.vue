@@ -210,10 +210,11 @@ export default {
     },
     goout() {
       clearCookie();
+      this.$store.state.show = 0;
       this.$router.push({ path: "/success", query: { url: "login" } });
     },
     toAdd(){
-      window.open(this.$store.state.baseUrl + '/Add','_blank')
+      window.open(this.$store.state.baseUrl + '/dist/#/Add','_blank')
     },
     search() {
       if (this.tableShow === true) {

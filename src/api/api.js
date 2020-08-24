@@ -255,10 +255,7 @@ export function tableConcentrateoreinfo(options) {
 export function tableIcatorsinfo(options) {
     return http.post('/ENFI-data/index.php/?s=Table/tableicatorsinfoinfo', options)
 }
-// 项目指标元素表
-export function tableIndicatorseleinfo(options) {
-    return http.post('/ENFI-data/index.php/?s=Table/tableindicatorseleinfo', options)
-}
+
 // 图纸量表
 export function tableDrawinginfo(options) {
     return http.post('/ENFI-data/index.php/?s=Table/tabledrawinginfo', options)
@@ -400,4 +397,9 @@ export function tableMachineetc(options) {
 // 删除信息
 export function Delete(options) {
     return http.post('/ENFI-data/index.php/?s=Table/delete', options)
+}
+
+// 数据备份
+export function Copy(options) {
+    return http.post('/ENFI-data/index.php/?s=Copy/index', options)
 }

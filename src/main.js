@@ -21,7 +21,9 @@ import {
     Radio,
     RadioGroup,
     Collapse,
-    CollapseItem
+    CollapseItem,
+    Upload,
+    Pagination
 } from 'element-ui';
 Vue.use(Container)
 Vue.use(Header)
@@ -38,6 +40,8 @@ Vue.use(Radio)
 Vue.use(RadioGroup)
 Vue.use(Collapse)
 Vue.use(CollapseItem)
+Vue.use(Upload)
+Vue.use(Pagination)
 
 new Vue({
     router,

@@ -31,8 +31,19 @@
           @click="search()"
         >搜 索</el-button>
         <el-button @click="goout" style="padding: 12px 18px; height:38px;line-height:8px">退出登录</el-button>
-        <my-table :issearch="issearch" @clearSearch="clearSearch" 
-        v-show="index <= 39" :index="index" :input="input"></my-table>
+        <el-button
+          @click="dataCopy"
+          type="success"
+          plain
+          style="padding: 12px 18px; height:38px;line-height:8px"
+        >数据备份</el-button>
+        <my-table
+          :issearch="issearch"
+          @clearSearch="clearSearch"
+          v-show="index <= 38"
+          :index="index"
+          :input="input"
+        ></my-table>
       </el-main>
     </el-container>
   </el-container>
@@ -40,6 +51,7 @@
 
 <script>
 import Table from "@/components/Add/Table";
+import { Copy } from "@/api/api";
 export default {
   name: "Add",
   data() {
@@ -51,7 +63,6 @@ export default {
         "原矿性质表",
         "精矿性质表",
         "项目指标表",
-        "项目指标元素",
         "图纸量表",
         "电能消耗",
         "材料消耗",
@@ -95,7 +106,7 @@ export default {
   components: {
     "my-table": Table,
   },
-  created(){
+  created() {
     this.index = this.$store.state.delIndex ? this.$store.state.delIndex : 0;
   },
   mounted() {
@@ -118,7 +129,7 @@ export default {
     changeTab(key, e) {
       this.index = key;
       this.$store.state.delIndex = this.index;
-      this.input = '';
+      this.input = "";
       let tableNameList = document.querySelectorAll(".item");
       for (let i = 0; i < tableNameList.length; i++) {
         tableNameList[i].className = "text item";
@@ -130,6 +141,18 @@ export default {
     },
     clearSearch() {
       this.issearch = 0;
+    },
+    dataCopy() {
+      Copy().then((res) => {
+        if (res === 1) {
+          window.location.href = `http://localhost:80/ENFI-data/enfi.sql`;
+          this.$store.state.isok = "1";
+          this.$router.push({ path: "/success", query: { url: "Add" } });
+        } else {
+          this.$store.state.isok = "0";
+          this.$router.push({ path: "/success", query: { url: "Add" } });
+        }
+      });
     },
   },
 };
@@ -145,6 +168,6 @@ export default {
   background-color: #c6e2ff;
 }
 .active {
-  background-color: #c6e2ff!important;
+  background-color: #c6e2ff !important;
 }
 </style>
